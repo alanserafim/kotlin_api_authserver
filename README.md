@@ -86,20 +86,9 @@ O PDS segue a metodologia ágil sendo uma abordagem interativa incremental.
 - [2] LARMAN, Craig. Utilizando UML e padrões. 2aed., Porto Alegre: Bookman Editora, 2006.
 
 
-### 👨‍💻 Responsável
 
-<table border="0" align="left">
-  <tr>
-    <td align="center">
-      <img src="https://github.com/alanserafim.png" width="160px" alt="Foto do Alan"/><br>
-      <sub>
-        <a href="https://github.com/alanserafim"> Alan </a>
-      </sub>
-    </td>
-  </tr>
-</table>
 
-## Anotações
+### Anotações
 
 * Inicialização do [Spring.io](https://start.spring.io/)
 
@@ -114,4 +103,17 @@ O PDS segue a metodologia ágil sendo uma abordagem interativa incremental.
 * Padrão arquitetural de organização código:
 
       Domain Driven Design
-    
+
+
+### 👨‍💻 Responsável
+
+<table border="0" align="left">
+  <tr>
+    <td align="center">
+      <img src="https://github.com/alanserafim.png" width="160px" alt="Foto do Alan"/><br>
+      <sub>
+        <a href="https://github.com/alanserafim"> Alan </a>
+      </sub>
+    </td>
+  </tr>
+</table>
