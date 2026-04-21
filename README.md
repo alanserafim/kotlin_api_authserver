@@ -1,6 +1,6 @@
-## AuthServer
+# AuthServer
 
-Criando uma API Spring com Kotlin
+## API REST utilizando Spring Boot com Kotlin
 
 * Inicialização do [Spring.io](https://start.spring.io/)
 
@@ -12,3 +12,11 @@ Criando uma API Spring com Kotlin
         - Dependências: Spring Web, Validation, SpringDoc
 
 
+* Padrão arquitetural de organização código: 
+    
+      Domain Driven Design
+
+
+
+
+    
