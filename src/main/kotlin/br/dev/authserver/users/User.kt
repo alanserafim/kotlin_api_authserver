@@ -1,4 +1,8 @@
 package br.dev.authserver.users
 
-class User {
-}
+class User (
+    var id: Long? = null,
+    var email: String,
+    var password: String = "",
+    var name: String = "",
+)
