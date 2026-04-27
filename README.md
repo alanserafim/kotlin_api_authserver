@@ -79,31 +79,15 @@ O PDS segue a metodologia ágil sendo uma abordagem interativa incremental.
 
 
 ### Links do Projeto
-
+* [Official Gradle documentation](https://docs.gradle.org)
+* [Spring Boot Gradle Plugin Reference Guide](https://docs.spring.io/spring-boot/4.0.5/gradle-plugin)
+* [Spring Web](https://docs.spring.io/spring-boot/4.0.5/reference/web/servlet.html)
+* [Validation](https://docs.spring.io/spring-boot/4.0.5/reference/io/validation.html)
+* [SpringDoc OpenAPI](https://springdoc.org/)
 
 >Referencias
 - [1] RICHARDSON, Chris. Microservices patterns: with examples in Java. Simon and Schuster, 2018.
 - [2] LARMAN, Craig. Utilizando UML e padrões. 2aed., Porto Alegre: Bookman Editora, 2006.
-
-
-
-
-### Anotações
-
-* Inicialização do [Spring.io](https://start.spring.io/)
-
-        - Grade - Kotlin, 
-        - Kotlin
-        - JAR
-        - YAML
-        - JAVA 21
-        - Dependências: Spring Web, Validation, SpringDoc
-
-
-* Padrão arquitetural de organização código:
-
-      Domain Driven Design
-
 
 ### 👨‍💻 Responsável
 
