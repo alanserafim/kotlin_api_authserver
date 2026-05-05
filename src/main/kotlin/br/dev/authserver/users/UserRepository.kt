@@ -1,8 +1,17 @@
 package br.dev.authserver.users
 
+import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.stereotype.Component
+import org.springframework.stereotype.Repository
 
-@Component
+@Repository
+interface UserRepository : JpaRepository<User, Long> {
+    fun findByEmail(email: String): User?
+
+}
+
+
+/*
 class UserRepository {
     private val users = mutableMapOf<Long, User>()
 
@@ -22,3 +31,4 @@ class UserRepository {
 
     fun delete(id: Long) = users.remove(id) != null
 }
+*/

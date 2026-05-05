@@ -22,7 +22,9 @@ class UserController(
 
     @PostMapping
     fun insert(@RequestBody user: User) =
-        userService.insert(user).let { ResponseEntity.status(HttpStatus.CREATED).body(it) }
+        userService.insert(user)
+            ?.let { ResponseEntity.status(HttpStatus.CREATED).body(it) }
+            ?: ResponseEntity.badRequest().build()
         // outra forma de fazer //
         // ResponseEntity.status(HttpStatus.CREATED).body(userService.insert(user))
 
