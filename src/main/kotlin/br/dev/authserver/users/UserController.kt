@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.DeleteMapping
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.PostMapping
+import org.springframework.web.bind.annotation.PutMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RequestParam
@@ -45,5 +46,11 @@ class UserController(
     fun delete(@PathVariable id: Long): ResponseEntity<Void> =
         if (userService.delete(id)) ResponseEntity.ok().build()
         else ResponseEntity.notFound().build()
+
+    @PutMapping("/{id}/roles/{roleName}")
+    fun grant(@PathVariable id: Long, @PathVariable roleName: String): ResponseEntity<Void> =
+        userService.addRole(id, roleName.uppercase())
+            ?.let { if(it) ResponseEntity.ok().build() else ResponseEntity.noContent().build() }
+            ?: ResponseEntity.badRequest().build()
 
 }
