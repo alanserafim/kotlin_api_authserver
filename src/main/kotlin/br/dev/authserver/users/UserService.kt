@@ -25,6 +25,8 @@ class UserService(
         SortDir.DESC -> repository.findAll(Sort.by("name").descending())
     }
 
+    fun findByRole(roleName: String) = repository.findByRole(roleName)
+
     fun findByIdOrNull(id: Long) = repository.findByIdOrNull(id)
 
     fun delete(id: Long): Boolean {

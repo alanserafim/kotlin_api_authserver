@@ -30,11 +30,15 @@ class UserController(
         // ResponseEntity.status(HttpStatus.CREATED).body(userService.insert(user))
 
     @GetMapping
-    fun list(@RequestParam sortDir: String?) =
-        SortDir.findOrNull(sortDir ?: "ASC")
-            ?.let { userService.findAll(it)}
-            ?.let { ResponseEntity.ok(it) }
-            ?: ResponseEntity.badRequest().build()
+    fun list(@RequestParam sortDir: String?, @RequestParam role: String?) =
+        if (role != null) {
+            userService.findByRole(role).let { ResponseEntity.ok(it) }
+        } else {
+            SortDir.findOrNull(sortDir ?: "ASC")
+                ?.let { userService.findAll(it) }
+                ?.let { ResponseEntity.ok(it) }
+                ?: ResponseEntity.badRequest().build()
+        }
 
     @GetMapping("/{id}")
     fun getById(@PathVariable id: Long) =
