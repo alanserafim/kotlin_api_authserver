@@ -6,11 +6,19 @@ spring:
     username: sa
     password: sa
   jpa:
-    show-sql: true
+    show-sql: false
   h2:
     console:
       enabled: true
-
+  web:
+    error:
+      whitelabel:
+        enabled: false
+      include-message: always
+      include-binding-errors: always
+      include-stacktrace: never
+      include-exception: true
+      
 server:
   servlet:
     context-path: /api
@@ -18,3 +26,10 @@ server:
 springdoc:
   swagger-ui:
     use-root-path: true
+
+logging:
+  file:
+    path: ./logs
+  threshold:
+    file: TRACE
+    console: INFO

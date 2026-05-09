@@ -33,6 +33,12 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-h2console")
 	runtimeOnly("com.h2database:h2")
 	testImplementation("org.springframework.boot:spring-boot-starter-data-jpa-test")
+	implementation("org.springframework.boot:spring-boot-starter-security")
+	testImplementation("org.springframework.boot:spring-boot-starter-security-test")
+	val jjwt = "0.13.0"
+	implementation("io.jsonwebtoken:jjwt-api:${jjwt}")
+	implementation("io.jsonwebtoken:jjwt-jackson:${jjwt}")
+	runtimeOnly("io.jsonwebtoken:jjwt-impl:${jjwt}")
 }
 
 kotlin {

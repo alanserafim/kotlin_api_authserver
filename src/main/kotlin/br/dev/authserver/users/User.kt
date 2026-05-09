@@ -11,6 +11,7 @@ import jakarta.persistence.JoinColumn
 import jakarta.persistence.JoinTable
 import jakarta.persistence.ManyToMany
 import jakarta.persistence.Table
+import jakarta.persistence.Transient
 
 @Entity
 @Table(name = "userTable")
@@ -34,4 +35,7 @@ class User (
         inverseJoinColumns = [JoinColumn(name = "idRole")]
     )
     var roles: MutableSet<Role> = mutableSetOf(),
-)
+) {
+    @Transient
+    fun isAdmin() = roles.any { r -> r.name == "ADMIN" }
+}
