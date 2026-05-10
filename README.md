@@ -82,16 +82,10 @@ A ideia do diagrama de classes de domínio é fornecer uma documentação enxuta
 Foi utilizado o padrão de arquitetura REST para a construção do projeto.
 Para organização código foi utilizado o DDD - Domain Driven Design.
 
-### Cobertura de Testes
-
-A cobertura de testes foi de XX%
 
 ### Boas práticas aplicadas
 
-* Clean Code
-* SOLID
 * Injeção de Dependências
-* Design Patterns
 
 ### Processo de Desenvolvimento de Software - PDS
 
