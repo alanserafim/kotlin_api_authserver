@@ -5,6 +5,10 @@
 ### Curso:
 * Pós-Graduação em Desenvolvimento de aplicativos móveis - PUCPR
 
+### Disciplina:
+* Desenvolvimento Backend
+
+
 ## Ferramentas
 As seguintes ferramentas foram usadas na construção do projeto:
 
@@ -12,6 +16,10 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 - Kotlin
 - Spring Boot
+- Spring Data JPA
+- Spring Security
+- Spring Validation
+- Jwt (JSON Web Token)
 
 ### 👉 **_Desenvolvimento Geral_**
 
@@ -24,9 +32,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 ## Introdução
 
-Este projeto possui o objetivo principal **implemtar uma API de Cadastro de Usuários**.
-
-Com os objetivos gerais de "..." .
+Este projeto possui o objetivo principal **implementar uma API para autenticação e gerenciamento informações de filmes e séries**.
 
 
 ### Vídeo explicativo do projeto
@@ -45,12 +51,13 @@ Com os objetivos gerais de "..." .
 
 ### Descrição do ambiente técnico
 
-O sistema é composto por um ... desenvolvido em ... e disponibilizado hibridamente para Android e IOS.
+O sistema é composto por um API http que segue o padrão de arquitetura REST.
 
 
 ## Inicialização
-Para executar o projeto, utilize as ferramentas descritas na sessão *Ferramentas*.
+Para executar o projeto, siga os passos abaixo.
 
+    descritivo
 
 ### Diagrama de Classes de Domínio
 
@@ -60,7 +67,8 @@ A ideia do diagrama de classes de domínio é fornecer uma documentação enxuta
 
 ### Padrão Arquitetural
 
-Foi utilizado o padrão de arquitetura .... para a construção do projeto.
+Foi utilizado o padrão de arquitetura REST para a construção do projeto.
+Para organização código foi utilizado o DDD - Domain Driven Design.
 
 ### Cobertura de Testes
 
