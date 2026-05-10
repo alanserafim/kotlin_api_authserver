@@ -32,7 +32,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 ## Introdução
 
-Este projeto possui o objetivo principal **implementar uma API para autenticação e gerenciamento informações de filmes e séries**.
+Este projeto possui o objetivo principal **implementar uma API para autenticação e gerenciamento de informações sobre filmes e séries**.
 
 
 ### Vídeo explicativo do projeto
@@ -43,11 +43,11 @@ Este projeto possui o objetivo principal **implementar uma API para autenticaç�
 
 ### Requisitos Funcionais
 
-* **RF01** - Funcionalidade: Descrição.
-* **RF02** - Funcionalidade: Descrição.
-* **RF03** - Funcionalidade: Descrição.
-* **RF04** - Funcionalidade: Descrição.
-
+* **RF01** - Cadastro de Usuário: O sistema deve permitir que novos usuários se registrem fornecendo nome, e-mail e senha.
+* **RF02** - Login de Usuário: O sistema deve autenticar usuários e retornar um token de acesso (ex: JWT).
+* **RF03** - Diferenciação de Níveis de Acesso: O sistema deve validar permissões (ex: Admin pode editar/excluir; User pode apenas visualizar).
+* **RF04** - Manutenção de Títulos: O sistema deve permitir criar, ler, atualizar e excluir (CRUD) registros de filmes e séries.
+* **RF05** - Manutenção de Episódios: O sistema deve permitir o CRUD de episódios vinculados a uma temporada e série. 
 
 ### Descrição do ambiente técnico
 
@@ -57,7 +57,19 @@ O sistema é composto por um API http que segue o padrão de arquitetura REST.
 ## Inicialização
 Para executar o projeto, siga os passos abaixo.
 
-    descritivo
+Pré requisitos
+* Java JDK
+* Git
+
+Demais etapas
+* Baixar código fonte
+    Https...
+* Entrar na página do projeto
+    cd kotlin_api_authserver
+* baixar as dependências
+    gradlew build
+* executar o projeto
+    spring-boot:run
 
 ### Diagrama de Classes de Domínio
 
