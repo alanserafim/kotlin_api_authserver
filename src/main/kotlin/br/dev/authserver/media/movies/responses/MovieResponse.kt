@@ -8,26 +8,12 @@ data class MovieResponse(
     val tmdbId: Long,
     val title: String,
     val overview: String,
-    val releaseDate: LocalDate?,
-    val posterPath: String?,
-    val backdropPath: String?,
-    val voteAverage: Double,
-    val voteCount: Int,
-    val popularity: Double,
-    val runtime: Int?
 ) {
     fun Movie.toResponse(): MovieResponse = MovieResponse(
         id = this.id!!,
         tmdbId = this.tmdbId!!,
         title = this.title,
         overview = this.overview,
-        releaseDate = this.releaseDate,
-        posterPath = this.posterPath,
-        backdropPath = this.backdropPath,
-        voteAverage = this.voteAverage,
-        voteCount = this.voteCount,
-        popularity = this.popularity,
-        runtime = this.runtime
     )
 
     constructor(movie: Movie) : this(
@@ -35,12 +21,5 @@ data class MovieResponse(
         movie.tmdbId!!,
         movie.title,
         movie.overview,
-        movie.releaseDate,
-        movie.posterPath,
-        movie.backdropPath,
-        movie.voteAverage,
-        movie.voteCount,
-        movie.popularity,
-        movie.runtime
     )
 }

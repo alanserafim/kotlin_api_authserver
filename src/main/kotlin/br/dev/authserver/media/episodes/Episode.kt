@@ -26,19 +26,10 @@ class Episode (
     val overview: String?,
 
     @Column(nullable = false)
-    val airDate: LocalDate?,
-
-    @Column(nullable = false)
     val episodeNumber: Int,
 
     @Column(nullable = false)
     val seasonNumber: Int,
-
-    @Column(nullable = false)
-    val stillPath: String = "",
-
-    @Column(nullable = false)
-    val voteAverage: Double = 0.0,
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "series_id")

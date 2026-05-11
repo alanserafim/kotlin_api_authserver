@@ -50,15 +50,32 @@ Este projeto possui o objetivo principal **implementar uma API para autenticaç�
 * **RF04** - Manutenção de Títulos: O sistema deve permitir criar, ler, atualizar e excluir (CRUD) registros de filmes e séries.
 * **RF05** - Manutenção de Episódios: O sistema deve permitir o CRUD de episódios vinculados a uma temporada e série. 
 
+### Diagrama de Classes de Domínio
+
+A ideia do diagrama de classes de domínio é fornecer uma documentação enxuta que será utilizada como ponto de partida para o desenvolvimento do projeto, sem a preocupação com os demais detalhes da UML.
+
+![diagrama](./docs/diagrama.png)
+
+
 ### Descrição do ambiente técnico
 
 O sistema é composto por um API http que segue o padrão de arquitetura REST.
 
 
+### Documentação da API - Imagens do Sistema
+
+Endpoints de Usuários e Autenticação
+
+![Documentação 1](./docs/swagger1.png)
+
+Endpoints de Filmes, Séries e Episódios
+
+![Documentação 2](./docs/swagger2.png)
+
 ### Padrão Arquitetural
 
 Foi utilizado o padrão de arquitetura REST para a construção do projeto.
-Para organização código foi utilizado o DDD - Domain Driven Design.
+Para organização código foi utilizado a separação por domínio de negócio com foco em modularidade.
 
 
 ### Boas práticas aplicadas
@@ -79,10 +96,6 @@ O PDS segue a metodologia ágil sendo uma abordagem interativa incremental.
 * [Spring Web](https://docs.spring.io/spring-boot/4.0.5/reference/web/servlet.html)
 * [Validation](https://docs.spring.io/spring-boot/4.0.5/reference/io/validation.html)
 * [SpringDoc OpenAPI](https://springdoc.org/)
-
->Referencias
-- [1] RICHARDSON, Chris. Microservices patterns: with examples in Java. Simon and Schuster, 2018.
-- [2] LARMAN, Craig. Utilizando UML e padrões. 2aed., Porto Alegre: Bookman Editora, 2006.
 
 ### 👨‍💻 Responsável
 

@@ -50,12 +50,6 @@ class SerieService(
             tmdbId = serieDetails.tmdbId,
             name = serieDetails.name,
             overview = serieDetails.overview,
-            firstAirDate = serieDetails.firstAirDate,
-            posterPath = serieDetails.posterPath,
-            backdropPath = serieDetails.backdropPath,
-            voteAverage = serieDetails.voteAverage,
-            numberOfEpisodes = serieDetails.numberOfEpisodes,
-            numberOfSeasons = serieDetails.numberOfSeasons
         )
 
         return serieRepository.save(updatedSeries)

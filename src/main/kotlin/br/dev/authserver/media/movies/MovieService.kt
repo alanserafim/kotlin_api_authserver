@@ -51,15 +51,7 @@ class MovieService(
             tmdbId = existingMovie.tmdbId,
             title = movieDetails.title,
             overview = movieDetails.overview,
-            releaseDate = movieDetails.releaseDate,
-            posterPath = movieDetails.posterPath,
-            backdropPath = movieDetails.backdropPath,
-            voteAverage = movieDetails.voteAverage,
-            voteCount = movieDetails.voteCount,
-            popularity = movieDetails.popularity,
-            runtime = movieDetails.runtime
         )
-
         return movieRepository.save(movieToUpdate)
     }
 

@@ -27,12 +27,9 @@ class EpisodeService(
             tmdbId = episode.tmdbId,
             name = episode.name,
             overview = episode.overview,
-            airDate = episode.airDate,
             episodeNumber = episode.episodeNumber,
             seasonNumber = episode.seasonNumber,
-            stillPath = episode.stillPath ?: "",
-            voteAverage = episode.voteAverage,
-            serie = serie,
+            serie = serie
         )
         return episodeRepository.save(episodeToSave)
             .also {  log.info("Episode {} added.", it.id) }
@@ -69,11 +66,8 @@ class EpisodeService(
             tmdbId = existingEpisode.tmdbId,
             name = episodeDetails.name,
             overview = episodeDetails.overview,
-            airDate = episodeDetails.airDate,
             episodeNumber = episodeDetails.episodeNumber,
             seasonNumber = episodeDetails.seasonNumber,
-            stillPath = episodeDetails.stillPath ?: "",
-            voteAverage = episodeDetails.voteAverage,
             serie = existingEpisode.serie
         )
 

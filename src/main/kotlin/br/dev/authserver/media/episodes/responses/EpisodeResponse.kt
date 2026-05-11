@@ -7,11 +7,8 @@ data class EpisodeResponse(
     val tmdbId: Long,
     val name: String,
     val overview: String?,
-    val airDate: java.time.LocalDate?,
     val episodeNumber: Int,
     val seasonNumber: Int,
-    val stillPath: String?,
-    val voteAverage: Double,
     val serieId: Long
 ) {
     fun Episode.toResponse(): EpisodeResponse = EpisodeResponse(
@@ -19,11 +16,8 @@ data class EpisodeResponse(
         tmdbId = this.tmdbId,
         name = this.name,
         overview = this.overview,
-        airDate = this.airDate,
         episodeNumber = this.episodeNumber,
         seasonNumber = this.seasonNumber,
-        stillPath = this.stillPath,
-        voteAverage = this.voteAverage,
         serieId = this.serie.id!!
     )
     constructor(episode: Episode) : this(
@@ -31,11 +25,8 @@ data class EpisodeResponse(
         episode.tmdbId,
         episode.name,
         episode.overview,
-        episode.airDate,
         episode.episodeNumber,
         episode.seasonNumber,
-        episode.stillPath,
-        episode.voteAverage,
-        episode.id!!
+        episode.serie.id!!
     )
 }

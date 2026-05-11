@@ -4,7 +4,6 @@ import jakarta.persistence.Column
 import jakarta.persistence.Entity
 import jakarta.persistence.GeneratedValue
 import jakarta.persistence.Id
-import java.time.LocalDate
 
 @Entity
 class Movie (
@@ -19,27 +18,6 @@ class Movie (
 
     @Column(nullable = false, length = 2000)
     var overview: String = "",
-
-    @Column(nullable = false)
-    var releaseDate: LocalDate?,
-
-    @Column(nullable = false)
-    var posterPath: String = "",
-
-    @Column(nullable = false)
-    var backdropPath: String = "",
-
-    @Column(nullable = false)
-    var voteAverage: Double = 0.0,
-
-    @Column(nullable = false)
-    var voteCount: Int = 0,
-
-    @Column(nullable = false)
-    var popularity: Double = 0.0,
-
-    @Column(nullable = false)
-    var runtime: Int? = null
 ) {
 
 }
