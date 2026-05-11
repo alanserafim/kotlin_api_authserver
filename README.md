@@ -19,6 +19,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - Spring Data JPA
 - Spring Security
 - Spring Validation
+- Spring Doc
 - Jwt (JSON Web Token)
 
 ### 👉 **_Desenvolvimento Geral_**
@@ -65,6 +66,7 @@ Para organização código foi utilizado o DDD - Domain Driven Design.
 * Injeção de Dependências
 * Logs
 * Tratamento de Erros
+* Documentação com Spring Doc
 
 ### Processo de Desenvolvimento de Software - PDS
 

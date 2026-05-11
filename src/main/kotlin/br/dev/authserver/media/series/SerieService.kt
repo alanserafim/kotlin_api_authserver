@@ -17,7 +17,7 @@ class SerieService(
     fun insert(serie: Serie): Serie {
         val serieId = serie.id
         if (serieId != null && serieRepository.existsById(serieId)) {
-            throw BadRequestException("Série com TMDB ID ${serie.id} já cadastrada.")
+            throw BadRequestException("Serie id: ${serie.id} already exists.")
         }
         return serieRepository.save(serie)
             .also {  log.info("Serie {} added.", it.id) }
@@ -26,10 +26,10 @@ class SerieService(
     fun findAll(): List<Serie> = serieRepository.findAll()
 
     fun findById(id: Long) = serieRepository.findByIdOrNull(id)
-            ?: throw NotFoundException("Série não encontrada com ID: $id")
+            ?: throw NotFoundException("Serie not found id: $id")
 
     fun findByTmdbId(tmdbId: Long) = serieRepository.findByTmdbId(tmdbId)
-        ?: throw NotFoundException("Série não encontrada com TMDB ID: $tmdbId")
+        ?: throw NotFoundException("Serie not found tmdbId: $tmdbId")
 
 
     fun findByTitle(name: String) = serieRepository.findByNameContainingIgnoreCase(name)

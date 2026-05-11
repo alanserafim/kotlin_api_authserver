@@ -56,9 +56,10 @@ class EpisodeController(
     @PutMapping("/{id}")
     fun update(
         @PathVariable id: Long,
-        @RequestBody episode: Episode
-    ): ResponseEntity<Episode> =
-        ResponseEntity.ok(episodeService.update(id, episode))
+        @RequestBody episode: EpisodeRequest
+    ) = episodeService.update(id, episode)
+        .let { ResponseEntity.ok(it) }
+
 
     @SecurityRequirement(name = "jwt-auth")
     @PreAuthorize("hasRole('ADMIN')")

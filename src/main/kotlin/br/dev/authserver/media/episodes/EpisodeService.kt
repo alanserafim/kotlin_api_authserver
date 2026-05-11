@@ -21,7 +21,7 @@ class EpisodeService(
         val serie = serieRepository.findByIdOrNull(serieId)
             ?: throw NotFoundException("Serie not found.")
         if (episodeRepository.findByTmdbId(episode.tmdbId) != null) {
-            throw BadRequestException("Episódio com TMDB ID ${episode.tmdbId} já cadastrado.")
+            throw BadRequestException("Episode tmdbId ${episode.tmdbId} already exists.")
         }
         val episodeToSave = Episode(
             tmdbId = episode.tmdbId,
@@ -35,16 +35,18 @@ class EpisodeService(
             serie = serie,
         )
         return episodeRepository.save(episodeToSave)
+            .also {  log.info("Episode {} added.", it.id) }
+
     }
 
     fun findAll(): List<Episode> = episodeRepository.findAll()
 
     fun findById(id: Long) = episodeRepository.findByIdOrNull(id)
-            ?: throw NotFoundException("Episódio não encontrado com ID: $id")
+            ?: throw NotFoundException("Episode not found ID: $id")
 
 
     fun findByTmdbId(tmdbId: Long) = episodeRepository.findByTmdbId(tmdbId)
-        ?: throw NotFoundException("Episódio não encontrado com TMDB ID: $tmdbId")
+        ?: throw NotFoundException("Episode not found tmdbId: $tmdbId")
 
     fun findByTitle(title: String) = episodeRepository.findByNameContainingIgnoreCase(title)
 
@@ -59,7 +61,7 @@ class EpisodeService(
     }
 
     @Transactional
-    fun update(id: Long, episodeDetails: Episode): Episode {
+    fun update(id: Long, episodeDetails: EpisodeRequest): Episode {
         val existingEpisode = findById(id)
 
         val updatedEpisode = Episode(
@@ -70,7 +72,7 @@ class EpisodeService(
             airDate = episodeDetails.airDate,
             episodeNumber = episodeDetails.episodeNumber,
             seasonNumber = episodeDetails.seasonNumber,
-            stillPath = episodeDetails.stillPath,
+            stillPath = episodeDetails.stillPath ?: "",
             voteAverage = episodeDetails.voteAverage,
             serie = existingEpisode.serie
         )

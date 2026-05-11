@@ -16,7 +16,7 @@ class MovieService(
     fun insert(movie: Movie): Movie {
         val movieId = movie.id
         if (movieId != null && movieRepository.existsById(movieId)) {
-            throw BadRequestException("Filme com ID $movieId já cadastrado.")
+            throw BadRequestException("Movie ID $movieId already exists.")
         }
         return movieRepository.save(movie)
             .also {  log.info("Movie {} added.", it.id) }
@@ -25,11 +25,11 @@ class MovieService(
     fun findAll(): List<Movie> = movieRepository.findAll()
 
     fun findById(id: Long) = movieRepository.findByIdOrNull(id)
-            ?: throw NotFoundException("Filme não encontrado com ID: $id")
+            ?: throw NotFoundException("Movie not found id: $id")
 
 
     fun findByTmdbId(tmdbId: Long) = movieRepository.findByTmdbId(tmdbId)
-        ?: throw NotFoundException("Filme não encontrado com ID: $tmdbId")
+        ?: throw NotFoundException("Movie not found tmdbId: $tmdbId")
 
 
     fun findByTitle(title: String) = movieRepository.findByTitleContainingIgnoreCase(title)
