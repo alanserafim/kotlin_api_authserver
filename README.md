@@ -37,7 +37,7 @@ Este projeto possui o objetivo principal **implementar uma API para autenticaç�
 
 ### Vídeo explicativo do projeto
 
-    * [Youtube](link)
+    * [Youtube](link) ---> será enviado em 11/05 as 21h
 
 ## Análise técnica
 
@@ -53,29 +53,6 @@ Este projeto possui o objetivo principal **implementar uma API para autenticaç�
 
 O sistema é composto por um API http que segue o padrão de arquitetura REST.
 
-
-## Inicialização
-Para executar o projeto, siga os passos abaixo.
-
-Pré requisitos
-* Java JDK
-* Git
-
-Demais etapas
-* Baixar código fonte
-    Https...
-* Entrar na página do projeto
-    cd kotlin_api_authserver
-* baixar as dependências
-    gradlew build
-* executar o projeto
-    spring-boot:run
-
-### Diagrama de Classes de Domínio
-
-A ideia do diagrama de classes de domínio é fornecer uma documentação enxuta que será utilizada como ponto de partida para o desenvolvimento do projeto, sem a preocupação com os demais detalhes da UML.
-
-    ![diagrama](./docs/diagrama_classes_dominio.png)
 
 ### Padrão Arquitetural
 
