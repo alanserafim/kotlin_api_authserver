@@ -86,6 +86,8 @@ Para organização código foi utilizado o DDD - Domain Driven Design.
 ### Boas práticas aplicadas
 
 * Injeção de Dependências
+* Logs
+* Tratamento de Erros
 
 ### Processo de Desenvolvimento de Software - PDS
 

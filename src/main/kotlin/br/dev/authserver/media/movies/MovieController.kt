@@ -37,7 +37,9 @@ class MovieController(
         ResponseEntity.ok(movieService.findById(id))
 
     @GetMapping("/tmdb/{tmdbId}")
-    fun getByTmdbId(@PathVariable tmdbId: Long): ResponseEntity<Movie> =
+    fun getByTmdbId(
+        @PathVariable tmdbId: Long
+    ): ResponseEntity<Movie> =
         ResponseEntity.ok(movieService.findByTmdbId(tmdbId))
 
     @GetMapping("/search")

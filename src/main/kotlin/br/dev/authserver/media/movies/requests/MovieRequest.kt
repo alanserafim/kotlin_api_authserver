@@ -5,10 +5,8 @@ import jakarta.validation.constraints.NotBlank
 import java.time.LocalDate
 
 data class MovieRequest(
-    @NotBlank
     val tmdbId: Long,
-
-    @NotBlank()
+    @NotBlank
     val title: String,
     val overview: String,
     val releaseDate: LocalDate?,

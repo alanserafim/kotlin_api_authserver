@@ -1,5 +1,6 @@
 package br.dev.authserver.media.series
 
+import br.dev.authserver.exceptions.BadRequestException
 import br.dev.authserver.exceptions.NotFoundException
 import br.dev.authserver.media.movies.MovieService
 import br.dev.authserver.users.UserService
@@ -14,8 +15,9 @@ class SerieService(
 ) {
     @Transactional
     fun insert(serie: Serie): Serie {
-        if (serieRepository.findById(serie.id!!).isEmpty) {
-            throw IllegalArgumentException("Série com TMDB ID ${serie.id} já cadastrada.")
+        val serieId = serie.id
+        if (serieId != null && serieRepository.existsById(serieId)) {
+            throw BadRequestException("Série com TMDB ID ${serie.id} já cadastrada.")
         }
         return serieRepository.save(serie)
             .also {  log.info("Serie {} added.", it.id) }
@@ -27,7 +29,7 @@ class SerieService(
             ?: throw NotFoundException("Série não encontrada com ID: $id")
 
     fun findByTmdbId(tmdbId: Long) = serieRepository.findByTmdbId(tmdbId)
-        ?: NotFoundException("Série não encontrada com TMDB ID: $tmdbId")
+        ?: throw NotFoundException("Série não encontrada com TMDB ID: $tmdbId")
 
 
     fun findByTitle(name: String) = serieRepository.findByNameContainingIgnoreCase(name)
@@ -45,8 +47,8 @@ class SerieService(
 
         val updatedSeries = Serie(
             id = existingSeries.id,
-            tmdbId = existingSeries.tmdbId,
-            name = existingSeries.name,
+            tmdbId = serieDetails.tmdbId,
+            name = serieDetails.name,
             overview = serieDetails.overview,
             firstAirDate = serieDetails.firstAirDate,
             posterPath = serieDetails.posterPath,
