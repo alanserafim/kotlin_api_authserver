@@ -41,6 +41,7 @@ class SecurityConfig (
                     .requestMatchers(HttpMethod.POST, "/users/login").permitAll()
                     .requestMatchers(HttpMethod.POST, "/movies").permitAll()
                     .requestMatchers(HttpMethod.POST, "/series").permitAll()
+                    .requestMatchers(HttpMethod.POST, "/episodes/**").permitAll()
                     .requestMatchers("/h2-console/**").permitAll()
                     .anyRequest().authenticated()
             }

@@ -30,7 +30,6 @@ class SerieController (
             .let { ResponseEntity.ok(it) }
     }
 
-
     @GetMapping("/{id}")
     fun getById(
         @PathVariable id: Long

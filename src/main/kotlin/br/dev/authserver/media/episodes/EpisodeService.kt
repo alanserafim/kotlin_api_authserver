@@ -2,6 +2,7 @@ package br.dev.authserver.media.episodes
 
 import br.dev.authserver.exceptions.BadRequestException
 import br.dev.authserver.exceptions.NotFoundException
+import br.dev.authserver.media.episodes.requests.EpisodeRequest
 import br.dev.authserver.media.movies.MovieService
 import br.dev.authserver.media.series.SerieRepository
 import br.dev.authserver.users.UserService
@@ -16,10 +17,10 @@ class EpisodeService(
     private val serieRepository: SerieRepository
 ) {
     @Transactional
-    fun insert(serieId: Long, episode: Episode): Episode {
+    fun insert(serieId: Long, episode: EpisodeRequest): Episode {
         val serie = serieRepository.findByIdOrNull(serieId)
             ?: throw NotFoundException("Serie not found.")
-        if (episodeRepository.findByIdOrNull(episode.id as Long) != null) {
+        if (episodeRepository.findByTmdbId(episode.tmdbId) != null) {
             throw BadRequestException("Episódio com TMDB ID ${episode.tmdbId} já cadastrado.")
         }
         val episodeToSave = Episode(
@@ -29,7 +30,7 @@ class EpisodeService(
             airDate = episode.airDate,
             episodeNumber = episode.episodeNumber,
             seasonNumber = episode.seasonNumber,
-            stillPath = episode.stillPath,
+            stillPath = episode.stillPath ?: "",
             voteAverage = episode.voteAverage,
             serie = serie,
         )
