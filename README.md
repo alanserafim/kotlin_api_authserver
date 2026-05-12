@@ -38,7 +38,8 @@ Este projeto possui o objetivo principal **implementar uma API para autenticaç�
 
 ### Vídeo explicativo do projeto
 
-[Youtube](https://youtu.be/Y_jjNYDQxIs) ---> será enviado em 11/05 as 21h
+[Youtube](https://youtu.be/Y_jjNYDQxIs)
+
 
 ## Análise técnica
 
