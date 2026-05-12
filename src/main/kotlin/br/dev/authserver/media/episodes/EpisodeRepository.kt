@@ -8,10 +8,8 @@ interface EpisodeRepository: JpaRepository<Episode, Long> {
 
     fun findByTmdbId(tmdbId: Long): Episode?
 
-    // Busca todos os episódios de uma série específica
     fun findBySerieId(seriesId: Long): List<Episode>
 
-    // Busca episódios por temporada de uma série
     fun findBySerieIdAndSeasonNumber(seriesId: Long, seasonNumber: Int): List<Episode>
 
     fun findByNameContainingIgnoreCase(title: String): List<Episode>

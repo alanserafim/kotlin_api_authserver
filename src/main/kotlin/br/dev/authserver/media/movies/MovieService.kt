@@ -45,7 +45,6 @@ class MovieService(
     fun update(id: Long, movieDetails: Movie): Movie {
         val existingMovie = findById(id)
 
-        // Criamos um novo objeto baseado no existente (ou usamos o plugin JPA que abre as classes)
         val movieToUpdate = Movie(
             id = existingMovie.id,
             tmdbId = existingMovie.tmdbId,
