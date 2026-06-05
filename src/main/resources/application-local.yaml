@@ -1,0 +1,22 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:db
+    username: sa
+    password: sa
+  jpa:
+    show-sql: false
+  h2:
+    console:
+      enabled: true
+  web:
+    error:
+      include-binding-errors: always
+      include-stacktrace: never
+      include-exception: true
+
+logging:
+  file:
+    path: ./logs
+  threshold:
+    file: TRACE
+    console: INFO
