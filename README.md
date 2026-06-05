@@ -46,10 +46,10 @@ Este projeto possui o objetivo principal **implementar uma API para autenticaç�
 ### Requisitos Funcionais
 
 * **RF01** - Cadastro de Usuário: O sistema deve permitir que novos usuários se registrem fornecendo nome, e-mail e senha.
-* **RF02** - Login de Usuário: O sistema deve autenticar usuários e retornar um token de acesso (ex: JWT).
-* **RF03** - Diferenciação de Níveis de Acesso: O sistema deve validar permissões (ex: Admin pode editar/excluir; User pode apenas visualizar).
+* **RF02** - Login de Usuário: O sistema deve autenticar usuários e retornar um token de acesso (JWT).
+* **RF03** - Diferenciação de Níveis de Acesso: O sistema deve validar permissões (ex: Admin pode editar/excluir; User pode apenas visualizar e cadastrar).
 * **RF04** - Manutenção de Títulos: O sistema deve permitir criar, ler, atualizar e excluir (CRUD) registros de filmes e séries.
-* **RF05** - Manutenção de Episódios: O sistema deve permitir o CRUD de episódios vinculados a uma temporada e série. 
+* **RF05** - Manutenção de Episódios: O sistema deve permitir o CRUD de episódios vinculados a uma série. 
 
 ### Diagrama de Classes de Domínio
 
