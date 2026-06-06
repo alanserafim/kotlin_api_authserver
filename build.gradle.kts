@@ -43,6 +43,13 @@ dependencies {
 	implementation("io.jsonwebtoken:jjwt-api:${jjwt}")
 	implementation("io.jsonwebtoken:jjwt-jackson:${jjwt}")
 	runtimeOnly("io.jsonwebtoken:jjwt-impl:${jjwt}")
+
+	//aws sdk
+	val awsVersion= "1.12.797"
+	implementation("com.amazonaws:aws-java-sdk-bom:$awsVersion")
+	implementation("com.amazonaws:aws-java-sdk-s3:$awsVersion")
+	implementation("javax.xml.bind:jaxb-api:2.4.0-b180830.0359")
+
 }
 
 kotlin {
