@@ -23,11 +23,13 @@ import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.RestController
+import org.springframework.web.multipart.MultipartFile
+import java.net.URI
 
 @RestController
 @RequestMapping("/users")
 class UserController(
-    val userService: UserService
+    val userService: UserService,
 ) {
 
     @GetMapping("/ping")
@@ -99,6 +101,13 @@ class UserController(
         userService.addRole(id, roleName)
             .let { if(it) ResponseEntity.ok().build() else ResponseEntity.noContent().build() }
 
-
+    @SecurityRequirement(name = "jwt-auth")
+    @PreAuthorize("hasRole('ADMIN')")
+    @PutMapping("/{id}/avatar", consumes = ["multipart/form-data"])
+    fun uploadAvatar(
+        @PathVariable id: Long,
+        @RequestParam avatar: MultipartFile
+    ) = userService.saveAvatar(id, avatar)
+        .let { ResponseEntity.created(URI(it)).build<Void>() }
 
 }

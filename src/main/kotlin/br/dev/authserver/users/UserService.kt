@@ -14,12 +14,14 @@ import org.springframework.data.domain.Sort
 import org.springframework.data.repository.findByIdOrNull
 import org.springframework.stereotype.Service
 import org.springframework.web.bind.annotation.PostMapping
+import org.springframework.web.multipart.MultipartFile
 
 @Service
 class UserService(
     val repository: UserRepository,
     val roleRepository: RoleRepository,
     val jwt: Jwt,
+    val avatarService: AvatarService
 ) {
     fun insert(user: User): User  {
         if(repository.findByEmail(user.email) != null) {
@@ -82,6 +84,13 @@ class UserService(
             token = jwt.createToken(user),
             user = UserResponse(user)
         )
+    }
+
+    fun saveAvatar(id: Long, avatar: MultipartFile): String {
+        val user = findById(id)
+        user.avatar = avatarService.save(user, avatar)
+        repository.save(user)
+        return avatarService.urlFor(user.avatar)
     }
 
     companion object {
