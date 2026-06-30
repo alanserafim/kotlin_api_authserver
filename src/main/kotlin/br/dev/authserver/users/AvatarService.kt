@@ -21,7 +21,7 @@ class AvatarService(
             }
             val path = "${user.id}/a_${user.id}.$extension"
             storage.save(user, "$ROOT/$path", avatar)
-            return path
+            return "${user.id}/xl_a_${user.id}.png"
         } catch (exception: Error) {
             log.warn("Could not save user ${user.id} avatar ${avatar.originalFilename}: ${exception.message}")
             return DEFAULT_AVATAR
