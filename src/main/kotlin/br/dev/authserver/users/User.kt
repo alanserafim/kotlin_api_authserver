@@ -12,6 +12,7 @@ import jakarta.persistence.JoinTable
 import jakarta.persistence.ManyToMany
 import jakarta.persistence.Table
 import jakarta.persistence.Transient
+import java.util.TimeZone
 
 @Entity
 @Table(name = "userTable")
@@ -27,6 +28,10 @@ class User (
 
     @Column(nullable = false)
     var name: String = "",
+
+    var bio: String = "",
+
+
 
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(

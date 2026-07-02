@@ -3,6 +3,7 @@ package br.dev.authserver.users
 import br.dev.authserver.exceptions.BadRequestException
 import br.dev.authserver.exceptions.NotFoundException
 import br.dev.authserver.exceptions.UnauthorizedException
+import br.dev.authserver.integration.quotes.QuoteClient
 import br.dev.authserver.roles.Role
 import br.dev.authserver.roles.RoleRepository
 import br.dev.authserver.security.Jwt
@@ -21,11 +22,15 @@ class UserService(
     val repository: UserRepository,
     val roleRepository: RoleRepository,
     val jwt: Jwt,
-    val avatarService: AvatarService
+    val avatarService: AvatarService,
+    val quoteClient: QuoteClient,
 ) {
     fun insert(user: User): User  {
         if(repository.findByEmail(user.email) != null) {
           throw BadRequestException("User already exists")
+        }
+        if(user.bio.isEmpty()) {
+            user.bio = quoteClient.randomQuote()?.text ?: ""
         }
         return repository.save(user)
             .also {  log.info("User {} added.", it.id) }

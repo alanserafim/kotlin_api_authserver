@@ -10,6 +10,8 @@ data class CreateUserRequest(
     @NotBlank
     val name: String?,
 
+    val bio: String?,
+
     @NotBlank
     @Email
     val email: String?,
@@ -20,6 +22,7 @@ data class CreateUserRequest(
     fun toUser(): User = User(
         name = name!!,
         email = email ?: "",
-        password = password ?: ""
+        password = password ?: "",
+        bio = bio ?: "",
     )
 }
