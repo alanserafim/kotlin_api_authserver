@@ -1,4 +1,4 @@
-# AuthServer
+# cinetrackserver
 
 ## API REST utilizando Spring Boot com Kotlin
 
