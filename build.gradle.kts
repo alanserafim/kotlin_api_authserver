@@ -7,7 +7,7 @@ plugins {
 }
 
 group = "br.dev"
-version = "0.0.3-SNAPSHOT"
+version = "0.0.5-SNAPSHOT"
 
 java {
 	toolchain {
@@ -49,6 +49,9 @@ dependencies {
 	implementation("com.amazonaws:aws-java-sdk-bom:$awsVersion")
 	implementation("com.amazonaws:aws-java-sdk-s3:$awsVersion")
 	implementation("javax.xml.bind:jaxb-api:2.4.0-b180830.0359")
+
+	//azure sdk
+	implementation("com.azure:azure-storage-blob:12.25.1")
 
 }
 

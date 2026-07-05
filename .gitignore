@@ -44,3 +44,4 @@ out/
 /lambda/.env/
 /lambda/package/
 /lambda/lambda.zip
+/lambda/
