@@ -7,10 +7,24 @@
 
 ### Disciplina:
 * Desenvolvimento Backend
+* Serviços Mobile em Cloud AWS
 
 
 ## Ferramentas
 As seguintes ferramentas foram usadas na construção do projeto:
+
+### 👉 **Nuvem**
+
+**AWS**
+- Elastic Beanstalk
+- S3
+- Lambda
+
+**Azure**
+- App Services
+- Storage Center / Blob Storage
+- App Functions
+
 
 ### 👉 **_Backend_**
 
@@ -38,8 +52,12 @@ Este projeto possui o objetivo principal **implementar uma API para autenticaç�
 
 ### Vídeo explicativo do projeto
 
+Desenvolvimento do Backend
 [Youtube](https://youtu.be/Y_jjNYDQxIs)
 
+Implementação em Nuvem AWS e Azure
+      
+      #link
 
 ## Análise técnica
 
