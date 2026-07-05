@@ -56,8 +56,7 @@ Desenvolvimento do Backend
 [Youtube](https://youtu.be/Y_jjNYDQxIs)
 
 Implementação em Nuvem AWS e Azure
-      
-      #link
+[Youtube](https://youtu.be/fy58aettKYQ)
 
 ## Análise técnica
 
