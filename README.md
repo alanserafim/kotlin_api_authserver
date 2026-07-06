@@ -58,6 +58,48 @@ Desenvolvimento do Backend
 Implementação em Nuvem AWS e Azure
 [Youtube](https://youtu.be/fy58aettKYQ)
 
+### Evidências visuais
+
+**Ambiente AWS**
+
+Elastic Beanstalk
+
+![Beanstalk](./docs/ElasticBenstalk.png)
+
+S3
+
+![S3](./docs/s3.png)
+
+Lambda
+
+![Lambda](./docs/lambda.png)
+
+
+**Ambiente Microsoft Azure**
+
+App Service
+
+![App Service](./docs/appservices.png)
+
+Blob Storage
+
+![Blob Storage](./docs/BlobStorage.png)
+
+Function App
+
+![Function App](./docs/FunctionApp.png)
+
+
+
+Endpoints de Usuários e Autenticação
+
+![Documentação 1](./docs/swagger1.png)
+
+Endpoints de Filmes, Séries e Episódios
+
+![Documentação 2](./docs/swagger2.png)
+
+
 ## Análise técnica
 
 ### Requisitos Funcionais
